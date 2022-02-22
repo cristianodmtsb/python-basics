@@ -1,5 +1,15 @@
 from django.shortcuts import render
+from .models import Contato
 
 
 def index(request):
-    return render(request, 'contatos/index.html')
+    contatos = Contato.objects.all()
+    return render(request, 'contatos/index.html', {
+        'contatos' : contatos
+    })
+
+def single_contato(request, contato_id):
+    contato = Contato.objects.get(id=contato_id)
+    return render(request, 'contatos/single.html', {
+        'contato' : contato
+    })
