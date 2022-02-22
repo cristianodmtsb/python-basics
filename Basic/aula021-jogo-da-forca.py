@@ -1,5 +1,5 @@
 # JOGO DA FORCA
-secret = 'palavra'
+secret = 'isabella'
 digitados = []
 chances = 3
 
